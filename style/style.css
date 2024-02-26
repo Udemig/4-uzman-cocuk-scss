@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins";
+}
+
+h1,
+h2 {
+  font-family: "EB Garamond";
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+@media (max-width: 700px) {
+  header {
+    padding: 10px 20px;
+  }
+  header img {
+    width: 70px !important;
+  }
+}
+header img {
+  width: 100px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  padding: 0 20px;
+  border-right: 1px solid;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: poppins;
+}
+header nav a:hover {
+  color: crimson;
+}
+header nav a:last-child {
+  border: none;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(rgb(223, 223, 233) 50%, white 50%);
+  gap: 200px;
+  padding: 50px 100px;
+}
+@media (max-width: 1200px) {
+  .hero {
+    flex-direction: column;
+    padding: 25px 50px;
+    gap: 150px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    padding: 10px 30px;
+    gap: 100px;
+  }
+}
+.hero .slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 500px;
+  margin: auto;
+}
+.hero .slogan h1 {
+  font-size: 40px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .hero .slogan h1 {
+    font-size: 35px;
+  }
+}
+.hero .slogan p {
+  color: rgb(122, 122, 122);
+  text-align: center;
+}
+.hero .slogan img {
+  width: 200px;
+  mix-blend-mode: darken;
+  margin-top: 20px;
+}
+.hero .slogan button {
+  background: crimson;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.hero .slogan button:hover {
+  background: rgb(146, 13, 40);
+}
+.hero .images {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.hero .images-banner {
+  max-width: 600px;
+  margin-top: 20px;
+}
+@media (max-width: 700px) {
+  .hero .images-banner {
+    width: 100%;
+  }
+}
+.hero .images-track {
+  max-width: 300px;
+  mix-blend-mode: difference;
+  border-radius: 10px;
+}
+
+#interior, #exterior {
+  margin-top: 40px;
+  height: 60vh;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), black), url("./../images/interior.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 70px;
+}
+#interior p, #exterior p {
+  text-align: center;
+  font-size: 22px;
+  max-width: 500px;
+}
+#interior button, #exterior button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  padding: 15px 60px;
+  transition: all 0.3s;
+}
+#interior button:hover, #exterior button:hover {
+  background: white;
+  color: black;
+}
+
+#timeline {
+  padding: 50px;
+}
+@media (max-width: 700px) {
+  #timeline {
+    padding: 20px;
+  }
+}
+#timeline h2 {
+  font-family: "Inter";
+}
+#timeline .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+@media (max-width: 1200px) {
+  #timeline .cards {
+    grid-template-columns: 1fr;
+  }
+}
+#timeline .cards .card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  font-family: "Inter";
+}
+#timeline .cards .card img {
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#timeline .cards .card button {
+  width: 300px;
+  margin: auto;
+  border: none;
+  background: crimson;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+#timeline .cards .card button:hover {
+  background: rgb(138, 4, 31);
+}
+
+#exterior {
+  background: radial-gradient(rgba(0, 0, 0, 0.5), black), url("./../images/exterior-4.jpg");
+  background-position: center;
+  background-size: cover;
+}/*# sourceMappingURL=style.css.map */

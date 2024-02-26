@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin laptop {
+  @media (max-width: 1200px) {
+    // buraya gelecek kodlar include ile göndereceğiz
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+body {
+  font-family: "poppins";
+}
+
+h1,
+h2 {
+  font-family: "EB Garamond";
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  @include mobile() {
+    padding: 10px 20px;
+    img {
+      width: 70px !important;
+    }
+  }
+  img {
+    width: 100px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    a {
+      padding: 0 20px;
+      border-right: 1px solid;
+      color: black;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.5s;
+      cursor: pointer;
+      font-family: poppins;
+      &:hover {
+        color: crimson;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+//* hero alanı
+.hero {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(rgb(223, 223, 233) 50%, white 50%);
+  gap: 200px;
+  padding: 50px 100px;
+  @include laptop {
+    flex-direction: column;
+    padding: 25px 50px;
+    gap: 150px;
+  }
+  @include mobile {
+    padding: 10px 30px;
+    gap: 100px;
+  }
+  .slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+    margin: auto;
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      @include mobile {
+        font-size: 35px;
+      }
+    }
+    p {
+      color: rgb(122, 122, 122);
+      text-align: center;
+    }
+    img {
+      width: 200px;
+      mix-blend-mode: darken;
+      margin-top: 20px;
+    }
+    button {
+      background: crimson;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: rgb(146, 13, 40);
+      }
+    }
+  }
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    &-banner {
+      max-width: 600px;
+      margin-top: 20px;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    &-track {
+      max-width: 300px;
+      mix-blend-mode: difference;
+      border-radius: 10px;
+    }
+  }
+}
+//* iç dizayn alanı
+#interior {
+  margin-top: 40px;
+  height: 60vh;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), black),
+    url("./../images/interior.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 70px;
+  p {
+    text-align: center;
+    font-size: 22px;
+    max-width: 500px;
+  }
+  button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    padding: 15px 60px;
+    transition: all 0.3s;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+}
+//* kartlar alanı
+#timeline {
+  padding: 50px;
+  @include mobile {
+    padding: 20px;
+  }
+  h2 {
+    font-family: "Inter";
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    @include laptop {
+      grid-template-columns: 1fr;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+      font-family: "Inter";
+      img {
+        height: 200px;
+        object-fit: contain;
+      }
+      button {
+        width: 300px;
+        margin: auto;
+        border: none;
+        background: crimson;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all 0.3s;
+        &:hover {
+          background: rgb(138, 4, 31);
+        }
+      }
+    }
+  }
+}
+
+#exterior {
+  @extend #interior;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), black),
+    url("./../images/exterior-4.jpg");
+  background-position: center;
+  background-size: cover;
+}
